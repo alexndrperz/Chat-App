@@ -1,12 +1,13 @@
 ﻿using Microsoft.AspNetCore.SignalR;
+using SignalArrTest.Models;
 
 namespace SignalArrTest.Hubs
 {
     public class ChatHub : Hub
     {
-        public async Task JoinChat()
+        public async Task JoinChat(UserModel user)
         {
-            await Clients.All.SendAsync("ReceiveMsg", "${ Context.ConnectionId} entro");
+            await Clients.All.SendAsync("ReceiveMessage", user.Username, $"ha entrado");
         }
     }
-}
+}   

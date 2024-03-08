@@ -80,3 +80,4 @@ C:\Users\TI\Desktop\Proyectos\SignalR\chatApp\SignalArrTest\obj\Debug\net8.0\ref
 C:\Users\TI\Desktop\Proyectos\SignalR\chatApp\SignalArrTest\obj\Debug\net8.0\SignalArrTest.pdb
 C:\Users\TI\Desktop\Proyectos\SignalR\chatApp\SignalArrTest\obj\Debug\net8.0\SignalArrTest.genruntimeconfig.cache
 C:\Users\TI\Desktop\Proyectos\SignalR\chatApp\SignalArrTest\obj\Debug\net8.0\ref\SignalArrTest.dll
+C:\Users\TI\Desktop\Proyectos\SignalR\chatApp\SignalArrTest\obj\Debug\net8.0\SignalArrTest.sourcelink.json

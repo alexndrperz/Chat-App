@@ -1,0 +1,44 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #53a13e1a;
+}
+
+.login-box {
+    padding: 47px 81px;
+    border-radius: 28px;
+    background-color: #d5e5d1;
+
+}
+
+.header-log {
+    color: rgb(1, 75, 1);
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 29px;
+    letter-spacing: 4px; 
+}
+
+
+.form-control {
+    border-radius: 14px;
+    border: 2px solid #196b19;
+    text-align: center;
+    font-size: 14px;
+}
+
+.input-container {
+    max-width: 330px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+
+}
+
+.btn {
+    width: fit-content;
+}

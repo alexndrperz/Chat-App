@@ -18,18 +18,23 @@ export class ChatService {
       .build();
 
     this.hubConnection.start()
-      .then(() => {this.joinChat(); console.log("conectado");
+      .then(() => {console.log("conectado");
       })
       .catch(err => console.error('Error al conectar al hub:', err));
+     
+      this.hubConnection.on('ReceiveMessage', (user: string, msg:string) => {
+        console.log(`${user} user`, );
+        console.log(msg);
+          
+        
+      });
 
 
 
   }
 
-  joinChat() {
-    this.hubConnection.invoke('JoinChat')
-    .then(() => console.log('JoinChat llamado'))
-    .catch(err => console.error('Error al llamar a JoinChat:', err));
+  joinChat(username:string) {
+    this.hubConnection.invoke("JoinChat", {username:username, chatRoom:"Main"});
   }
 
 
