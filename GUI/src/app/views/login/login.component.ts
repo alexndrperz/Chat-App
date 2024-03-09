@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ChatService } from '../../services/chat.service';
 import { FormsModule } from '@angular/forms';
 import { UserModel } from '../../chat-interfaces';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -22,14 +23,14 @@ export class LoginComponent {
   }
 
   ngOnInit() {
-    this._wsService.startConnection()
+ 
   }
-  constructor(private _wsService:ChatService) {
+  constructor(private _wsService:ChatService, private _router:Router) {
     
   }
 
 
-  sendMsg() {
-    this._wsService.joinChat(this.formData.username)
+  enterChat() {
+    this._router.navigate(['/chat-org'])
   }
 }

@@ -7,7 +7,7 @@ namespace SignalArrTest.Hubs
     {
         public async Task JoinChat(UserModel user)
         {
-            await Clients.All.SendAsync("ReceiveMessage", user.Username, $"ha entrado");
+            await Clients.All.SendAsync("ReceiveMessage", user.Username, user.chatRoom);
         }
     }
 }   
