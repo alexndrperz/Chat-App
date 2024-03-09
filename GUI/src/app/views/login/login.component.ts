@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ChatService } from '../../services/chat.service';
 import { FormsModule } from '@angular/forms';
+import { UserModel } from '../../chat-interfaces';
 
 @Component({
   selector: 'app-login',
@@ -9,10 +10,15 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
+
+
+
+
 export class LoginComponent {
 
-  formData = {
-    username:""
+  formData:UserModel = {
+    username:"",
+    chatRoom:""
   }
 
   ngOnInit() {
