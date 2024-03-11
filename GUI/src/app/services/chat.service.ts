@@ -45,7 +45,9 @@ export class ChatService {
   }
 
   sendMsg(username:string, msg:string) {
-    this.hubConnection.invoke("SendMessage", {username:username, message: msg}) 
+    if(msg.length != 0) {
+      this.hubConnection.invoke("SendMessage", {username:username, message: msg}) 
+    }
   }
 
 

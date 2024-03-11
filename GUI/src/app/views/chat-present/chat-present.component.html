@@ -10,7 +10,7 @@
 
 
     <section class="input-cont">
-        <input type="text" class=" form-control "[(ngModel)]="inputStr">
+        <input type="text" class=" form-control "[(ngModel)]="inputStr" (keyup.enter)="sendMsg()">
         <button class="btn btn-outline-primary"  (click)="sendMsg()">Enviar</button> 
     </section>
 

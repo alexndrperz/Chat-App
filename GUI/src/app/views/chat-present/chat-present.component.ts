@@ -33,6 +33,7 @@ export class ChatPresentComponent {
 
 	sendMsg() {
 		this._chatServ.sendMsg(this._chatServ.username,this.inputStr )
+		this.inputStr = ""
 	}
 
 }
