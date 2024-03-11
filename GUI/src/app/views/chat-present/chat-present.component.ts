@@ -10,17 +10,24 @@ import { ChatService } from '../../services/chat.service';
 })
 export class ChatPresentComponent {
   constructor(private _chatServ:ChatService)  {}
-
+  messages:string[] = []
   ngOnInit() {
-    this.connect()
+     this.connect()
 
   }
 
 
-  async connect() {
-     console.log(await this._chatServ.startConnection());
-    await this._chatServ.joinChat("Aloha")
+   connect() {
+     this._chatServ.startConnection()
+  
+     this._chatServ.messageOb$.subscribe({
+      next:(res:any) => {
+        console.log(res);
+        
+      }
+     })
+     }
 
   }
 
-}
+
