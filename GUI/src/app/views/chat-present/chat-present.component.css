@@ -1,0 +1,11 @@
+.chat-temp-container {
+    margin: 20px;
+    display: flex;
+    gap:20px
+}
+
+.input-cont {
+    display: flex;
+    height: fit-content;
+    gap: 20px;
+}

@@ -7,8 +7,9 @@ import { Observable, Subject } from 'rxjs';
 })
 export class ChatService {
   private hubConnection!: HubConnection;
-  messageSubj: Subject<string[]> = new Subject<string[]>();
-  messageOb$: Observable<string[]> = this.messageSubj.asObservable();
+  messageSubj: Subject<string> = new Subject<string>();
+  messageOb$: Observable<string> = this.messageSubj.asObservable();
+  username:string = "";
 
   constructor() { }
 
@@ -20,13 +21,18 @@ export class ChatService {
     this.hubConnection.start()
       .then(() => {
         console.log("conectado");
-        this.joinChat("juan")
+        this.joinChat(this.username)
       })
       .catch(err => console.error('Error al conectar al hub:', err));
 
-    this.hubConnection.on('ReceiveMessage', (user: string, msg: string) => {
+    this.hubConnection.on('ReceiveMessage', (user: string, chat: string) => {
       
-      this.messageSubj.next([user,msg])
+      this.messageSubj.next(`El usuario ${user} ha entrado al chat ${chat}`);
+
+    });
+
+    this.hubConnection.on('SendMsg', (user: string, msg: string) => {
+      this.messageSubj.next(`${user}: ${msg}`);
 
     });
 
@@ -36,6 +42,10 @@ export class ChatService {
 
   joinChat(username: string) {
     this.hubConnection.invoke("JoinChat", { username: username, chatRoom: "Main" });
+  }
+
+  sendMsg(username:string, msg:string) {
+    this.hubConnection.invoke("SendMessage", {username:username, message: msg}) 
   }
 
 

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SignalArrTest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+45fd90605cb030f1c3afe2130635a87630ec308a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+62ca85c887690212c8503e6d475cf2eb714c4e5c")]
 [assembly: System.Reflection.AssemblyProductAttribute("SignalArrTest")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SignalArrTest")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

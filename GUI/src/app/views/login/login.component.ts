@@ -31,6 +31,7 @@ export class LoginComponent {
 
 
   enterChat() {
+    this._wsService.username = this.formData.username == '' ? 'anonymus' : this.formData.username; 
     this._router.navigate(['/chat-org'])
   }
 }

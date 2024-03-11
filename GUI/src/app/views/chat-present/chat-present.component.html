@@ -1,1 +1,17 @@
-<p>chat-present works!</p>
+
+
+<!--Fix this shit-->
+<ul class="chat-temp-container">
+    <section class="chat-msg">
+        <li *ngFor="let mess of messages" >
+        {{mess}}
+        </li>
+    </section>
+
+
+    <section class="input-cont">
+        <input type="text" class=" form-control "[(ngModel)]="inputStr">
+        <button class="btn btn-outline-primary"  (click)="sendMsg()">Enviar</button> 
+    </section>
+
+</ul>
