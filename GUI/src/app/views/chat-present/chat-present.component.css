@@ -1,11 +1,70 @@
-.chat-temp-container {
-    margin: 20px;
-    display: flex;
-    gap:20px
+/* #region Root */
+main {
+    background-color: #53a13e1a;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    min-width: 400px;
 }
+
+/* #endregion*/
+
+/*#region ChatBox*/
+
+.chatbox {
+    min-height: 500px;
+    background-color: white;
+    border-radius: 20px;
+    width: 70%;
+    min-width: 400px;
+    max-width: 865px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-msg {
+   flex: 1;
+    overflow: auto;
+}
+
+.chat-input {
+    height: auto;
+    display: flex;
+    gap: 12px;
+}
+
+.send-btn {
+    background-color: green;
+    border: 0px;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    padding: 7px;
+    transition:  background-color 0.5s;
+}
+
+.chatbox .form-control {
+    border: 1px solid #568b45 ;
+}
+.chatbox .form-control:hover {
+    box-shadow: 0px 0px 0px 1px #568b45;
+}
+
+.chatbox .form-control:focus {
+    box-shadow: 0px 0px 0px 1px #568b45;
+}
+.send-btn:hover {
+    background-color: rgb(0, 68, 0);
+}
+
+
 
 .input-cont {
     display: flex;
     height: fit-content;
     gap: 20px;
 }
+
+/*#endregion*/

@@ -21,7 +21,7 @@ export class ChatService {
     this.hubConnection.start()
       .then(() => {
         console.log("conectado");
-        this.joinChat(this.username)
+        this.joinChat()
       })
       .catch(err => console.error('Error al conectar al hub:', err));
 
@@ -36,17 +36,45 @@ export class ChatService {
 
     });
 
+    this.hubConnection.on('LeaveChat', ( msg: string) => {
+      this.messageSubj.next(`${msg}`);
 
+    });
 
   }
 
-  joinChat(username: string) {
-    this.hubConnection.invoke("JoinChat", { username: username, chatRoom: "Main" });
+  leaveChat() {
+    this.hubConnection.invoke("LeaveChat", {username: this.getUserInformation(), chatRoom:"Main"});
   }
 
-  sendMsg(username:string, msg:string) {
+  saveUserInformation(username:string) {
+    this.username = username == '' ? 'anonymus' : username;
+    console.log(username);
+    
+    sessionStorage.setItem("user", this.username) 
+  }
+
+  getUserInformation():string {
+    let val:string | null =  sessionStorage.getItem("user")
+    if(val == null) {
+      return "anonymous"
+    }
+    return val
+  }
+
+  connect() {
+		this.startConnection()
+		return this.messageOb$
+	}
+
+
+  joinChat() {
+    this.hubConnection.invoke("JoinChat", { username: this.getUserInformation(), chatRoom: "Main" });
+  }
+
+  sendMsg(msg:string) {
     if(msg.length != 0) {
-      this.hubConnection.invoke("SendMessage", {username:username, message: msg}) 
+      this.hubConnection.invoke("SendMessage", {username:this.getUserInformation(), message: msg}) 
     }
   }
 

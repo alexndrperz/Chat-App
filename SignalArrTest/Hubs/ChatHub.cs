@@ -15,5 +15,11 @@ namespace SignalArrTest.Hubs
         {
             await Clients.All.SendAsync("SendMsg", userMess.username, userMess.message);
         }
+
+
+        public async Task LeaveChat(UserModel user)
+        {
+            await Clients.All.SendAsync("LeaveChat", $"El usuario {user.Username} salió de la conversacion");
+        }
     }
 }   

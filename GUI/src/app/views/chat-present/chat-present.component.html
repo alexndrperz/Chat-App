@@ -1,17 +1,23 @@
-
-
 <!--Fix this shit-->
-<ul class="chat-temp-container">
-    <section class="chat-msg">
-        <li *ngFor="let mess of messages" >
-        {{mess}}
-        </li>
+<!--All right-->
+<main>
+    <section class="chatbox">
+        <section class="chat-msg">
+            <ul class="chat-temp-container">
+                <li *ngFor="let mess of messages">
+                    {{mess}}
+                </li>
+            </ul>
+        </section>
+
+        <section class="chat-input">
+            <input type="text" class=" form-control " [(ngModel)]="inputStr" (keyup.enter)="sendMsg()">
+            <button class="send-btn" (click)="sendMsg()">
+                <span class="material-symbols-outlined">
+                    send
+                </span>
+            </button>
+        </section>
+
     </section>
-
-
-    <section class="input-cont">
-        <input type="text" class=" form-control "[(ngModel)]="inputStr" (keyup.enter)="sendMsg()">
-        <button class="btn btn-outline-primary"  (click)="sendMsg()">Enviar</button> 
-    </section>
-
-</ul>
+</main>

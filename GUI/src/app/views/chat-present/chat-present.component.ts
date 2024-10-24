@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { ChatService } from '../../services/chat.service';
 import { NgFor } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -15,25 +15,35 @@ export class ChatPresentComponent {
 	messages: string[] = []
 	inputStr:string = "";
 	ngOnInit() {
-		this.connect()
+		this.handleInitSocket()
 
 	}
+	leave() {
+		this._chatServ.leaveChat()
+	}
 
-
-	connect() {
-		this._chatServ.startConnection()
-		this._chatServ.messageOb$.subscribe({
-			next: (res: any) => {
-				this.messages.push(res)
-
+	handleInitSocket() {
+		this._chatServ.connect().subscribe({
+			next:(returnable:string) => {
+				this.messages.push(returnable)
 			}
 		})
+		let chatServ = this._chatServ
+		window.addEventListener("beforeunload", function (e) {
+			chatServ.leaveChat()
+		});
+
+
 	}
+
+
 
 
 	sendMsg() {
-		this._chatServ.sendMsg(this._chatServ.username,this.inputStr )
-		this.inputStr = ""
+		if(this.inputStr != "") {
+			this._chatServ.sendMsg(this.inputStr )
+			this.inputStr = ""
+		}
 	}
 
 }
