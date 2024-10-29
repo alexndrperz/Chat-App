@@ -1,0 +1,42 @@
+.msg-box-left {
+    border: green;
+    background-color: #badfba;
+    color: #004d00;
+    width: fit-content;
+    padding: 9px 23px 11px 13px;
+    border-radius: 0px 25px 25px 13px;
+}
+
+.user-title {
+    margin: 0px;
+    margin-left: 6px;
+    font-size: 14px;
+    color: #005100;
+}
+.msg-box-left p {
+    margin: 0px;
+}
+
+.main-object-right {
+    display: flex;
+    justify-content: right;
+}
+
+.msg-container-right {
+    width: fit-content;
+}
+
+.msg-box {
+    border: green;
+    background-color: #badfba;
+    color: #004d00;
+    width: fit-content;
+    display: flex;
+    justify-content: right;
+    padding: 9px 23px 11px 13px;
+    border-radius: 0px 25px 25px 13px;
+}
+
+.msg-box-right p {
+
+}

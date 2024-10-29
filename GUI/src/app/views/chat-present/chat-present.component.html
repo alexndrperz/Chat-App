@@ -4,9 +4,9 @@
     <section class="chatbox">
         <section class="chat-msg">
             <ul class="chat-temp-container">
-                <li *ngFor="let mess of messages">
-                    {{mess}}
-                </li>
+                <cht-message-box 
+                    *ngFor="let msg of messages"
+                    [msg]="msg"/>
             </ul>
         </section>
 

@@ -23,7 +23,7 @@ main {
     display: flex;
     flex-direction: column;
 }
-
+/*#endregion*/
 .chat-msg {
    flex: 1;
     overflow: auto;
@@ -35,6 +35,14 @@ main {
     gap: 12px;
 }
 
+
+ul {
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
 .send-btn {
     background-color: green;
     border: 0px;
@@ -67,4 +75,3 @@ main {
     gap: 20px;
 }
 
-/*#endregion*/

@@ -2,11 +2,12 @@ import { Component, input } from '@angular/core';
 import { ChatService } from '../../services/chat.service';
 import { NgFor } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { MessageBoxComponent } from "../../components/message-box/message-box.component";
 
 @Component({
 	selector: 'app-chat-present',
 	standalone: true,
-	imports: [NgFor, FormsModule],
+	imports: [NgFor, FormsModule, MessageBoxComponent],
 	templateUrl: './chat-present.component.html',
 	styleUrl: './chat-present.component.css'
 })
