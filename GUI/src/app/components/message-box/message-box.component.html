@@ -1,7 +1,9 @@
-<section class="main-object-right">
-    <section class="msg-container-right">
-        <p class="user-title">{{user}}</p>
-        <div class="msg-box-left" >
+<section class="main-object-{{positionMsg}}">
+    <section class="msg-container">
+        @if (positionMsg !='center') {
+            <p class="user-title">{{user}}</p>
+        }
+        <div class="msg-box" >
             <p>{{msg}}</p>
         </div>
     </section>

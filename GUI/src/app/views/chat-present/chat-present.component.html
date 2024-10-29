@@ -4,9 +4,9 @@
     <section class="chatbox">
         <section class="chat-msg">
             <ul class="chat-temp-container">
-                <cht-message-box 
-                    *ngFor="let msg of messages"
-                    [msg]="msg"/>
+                <cht-message-box *ngFor="let item of messages" [msg]="item.msg" [user]="item.user" [positionMsg]="item.typeMsg" />
+                <!-- <cht-message-box [msg]="'aja my men'" [positionMsg]="'right'" />
+                <cht-message-box [msg]="'aja my men'" [positionMsg]="'center'" /> -->
             </ul>
         </section>
 

@@ -1,10 +1,12 @@
-.msg-box-left {
+.msg-box {
     border: green;
     background-color: #badfba;
     color: #004d00;
     width: fit-content;
-    padding: 9px 23px 11px 13px;
-    border-radius: 0px 25px 25px 13px;
+
+}
+.msg-box p {
+    margin: 0px;
 }
 
 .user-title {
@@ -13,8 +15,26 @@
     font-size: 14px;
     color: #005100;
 }
-.msg-box-left p {
-    margin: 0px;
+
+
+.main-object-left {
+    display: flex;
+    justify-content: left;
+}
+
+.main-object-left .msg-box{
+    padding: 9px 23px 11px 13px;
+    border-radius: 0px 25px 25px 13px;
+}
+
+
+.main-object-center {
+    display: flex;
+    justify-content: center;
+}
+.main-object-center .msg-box{
+    background-color: transparent;
+
 }
 
 .main-object-right {
@@ -22,21 +42,14 @@
     justify-content: right;
 }
 
-.msg-container-right {
+.main-object-right .msg-box{
+    padding:11px 13px 9px 23px;
+    border-radius: 25px 0px 13px 25px;
+}
+
+.msg-container {
     width: fit-content;
 }
 
-.msg-box {
-    border: green;
-    background-color: #badfba;
-    color: #004d00;
-    width: fit-content;
-    display: flex;
-    justify-content: right;
-    padding: 9px 23px 11px 13px;
-    border-radius: 0px 25px 25px 13px;
-}
 
-.msg-box-right p {
 
-}

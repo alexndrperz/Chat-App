@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HubConnection, HubConnectionBuilder, LogLevel } from '@microsoft/signalr';
 import { Observable, Subject } from 'rxjs';
+import { MsgSctructure } from '../models/msg-sctructure';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ChatService {
   private hubConnection!: HubConnection;
-  messageSubj: Subject<string> = new Subject<string>();
-  messageOb$: Observable<string> = this.messageSubj.asObservable();
+  messageSubj: Subject<MsgSctructure> = new Subject<MsgSctructure>();
+  messageOb$: Observable<MsgSctructure> = this.messageSubj.asObservable();
   username:string = "";
 
   constructor() { }
@@ -26,18 +27,37 @@ export class ChatService {
       .catch(err => console.error('Error al conectar al hub:', err));
 
     this.hubConnection.on('ReceiveMessage', (user: string, chat: string) => {
+
       
-      this.messageSubj.next(`El usuario ${user} ha entrado al chat ${chat}`);
+      this.messageSubj.next({
+        typeMsg:"center",
+        user:user,
+        msg:`El usuario ${user} ha entrado al chat ${chat}`
+      });
 
     });
 
     this.hubConnection.on('SendMsg', (user: string, msg: string) => {
-      this.messageSubj.next(`${user}: ${msg}`);
+      let typeMessage:""|"left"|"right" = "";
+      if(user == this.getUserInformation()) {
+        typeMessage = 'left'
+      } else{
+        typeMessage = 'right'
+      }
+      this.messageSubj.next({
+        typeMsg:typeMessage,
+        msg:msg,
+        user:user
+      });
 
     });
 
     this.hubConnection.on('LeaveChat', ( msg: string) => {
-      this.messageSubj.next(`${msg}`);
+      this.messageSubj.next({
+        typeMsg:"center",
+        user:"",
+        msg:msg
+      });
 
     });
 

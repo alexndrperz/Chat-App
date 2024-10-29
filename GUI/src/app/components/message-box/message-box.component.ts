@@ -10,5 +10,5 @@ import { Component, Input } from '@angular/core';
 export class MessageBoxComponent {
   @Input() msg:string  = ""
   @Input() user:string  = "user1"
-  
+  @Input() positionMsg:string = ""
 }

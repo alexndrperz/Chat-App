@@ -3,6 +3,7 @@ import { ChatService } from '../../services/chat.service';
 import { NgFor } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MessageBoxComponent } from "../../components/message-box/message-box.component";
+import { MsgSctructure } from '../../models/msg-sctructure';
 
 @Component({
 	selector: 'app-chat-present',
@@ -13,7 +14,7 @@ import { MessageBoxComponent } from "../../components/message-box/message-box.co
 })
 export class ChatPresentComponent {
 	constructor(private _chatServ: ChatService) { }
-	messages: string[] = []
+	messages: MsgSctructure[] = []
 	inputStr:string = "";
 	ngOnInit() {
 		this.handleInitSocket()
@@ -25,7 +26,7 @@ export class ChatPresentComponent {
 
 	handleInitSocket() {
 		this._chatServ.connect().subscribe({
-			next:(returnable:string) => {
+			next:(returnable:MsgSctructure) => {
 				this.messages.push(returnable)
 			}
 		})
