@@ -39,7 +39,8 @@ main {
 
 
 ul {
-    padding: 0px;
+    /* padding-right: 8px; */
+    padding: 0px 8px 0px 0px;
     margin: 0px;
     display: flex;
     flex-direction: column;
@@ -79,7 +80,7 @@ ul {
 
 /* Ancho del scrollbar */
 ::-webkit-scrollbar {
-    width: 12px;
+    width: 10px;
 }
 
 /* Estilos para el fondo del track */
