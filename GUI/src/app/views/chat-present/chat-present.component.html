@@ -2,11 +2,9 @@
 <!--All right-->
 <main>
     <section class="chatbox">
-        <section class="chat-msg">
+        <section class="chat-msg" id = "scroll"#scrollContainer>
             <ul class="chat-temp-container">
                 <cht-message-box *ngFor="let item of messages" [msg]="item.msg" [user]="item.user" [positionMsg]="item.typeMsg" />
-                <!-- <cht-message-box [msg]="'aja my men'" [positionMsg]="'right'" />
-                <cht-message-box [msg]="'aja my men'" [positionMsg]="'center'" /> -->
             </ul>
         </section>
 

@@ -14,6 +14,7 @@ main {
 
 .chatbox {
     min-height: 500px;
+    max-height: 500px;
     background-color: white;
     border-radius: 20px;
     width: 70%;
@@ -27,6 +28,7 @@ main {
 .chat-msg {
    flex: 1;
     overflow: auto;
+    margin-bottom: 9px;
 }
 
 .chat-input {
@@ -75,3 +77,28 @@ ul {
     gap: 20px;
 }
 
+/* Ancho del scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* Estilos para el fondo del track */
+::-webkit-scrollbar-track {
+    background-color: #f2f2f2; /* Color de fondo más claro */
+    border: 1px solid #d4d4d4; /* Bordes más suaves */
+    border-radius: 10px; /* Borde redondeado */
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2); /* Sombra interior */
+}
+
+/* Estilos para el thumb */
+::-webkit-scrollbar-thumb {
+    background-color: rgb(5, 119, 5); /* Color base */
+    border-radius: 10px;
+    border: 2px solid #f2f2f2; /* Espacio alrededor del thumb */
+    transition: background-color 0.3s ease; /* Transición para hover */
+}
+
+/* Hover en el thumb */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #5c5c5c; /* Color más claro al pasar el mouse */
+}
